@@ -355,9 +355,19 @@ a:hover {
         padding: 20px;
     }
 
+    .other-project-row {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 4px;
+    }
+
     .other-project-info {
         flex-direction: column;
         gap: 2px;
+    }
+
+    .other-project-link {
+        margin-left: 0;
     }
 
     .contact-links {
