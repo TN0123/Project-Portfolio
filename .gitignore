@@ -55,3 +55,4 @@ jspm_packages/
 tmp/
 temp/
 .superpowers/
+.playwright-mcp/

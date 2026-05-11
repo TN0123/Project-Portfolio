@@ -4,270 +4,476 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Tanay Naik</title>
-    <meta name="description" content="Tanay Naik — Software Engineer. CS @ UMD. Projects in AI, ML, and Full-Stack.">
+    <meta name="description" content="Tanay Naik. CS @ UMD. Projects in AI, ML, and Full-Stack.">
     <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text x=%2250%22 y=%2252%22 text-anchor=%22middle%22 dominant-baseline=%22central%22 font-size=%2282%22>🚀</text></svg>">
     <link rel="stylesheet" href="styles.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Geist:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
 </head>
 <body>
-    <!-- Hero -->
-    <section class="hero">
-        <div class="container">
-            <span class="section-label">SOFTWARE ENGINEER</span>
-            <h1 class="hero-name">Tanay Naik</h1>
-            <p class="hero-tagline">CS @ UMD</p>
-            <div class="hero-links">
-                <a href="https://github.com/TN0123" target="_blank">GitHub</a>
-                <a href="https://linkedin.com/in/tanaynaik05" target="_blank">LinkedIn</a>
-                <a href="mailto:naiktanay05@gmail.com">Email</a>
-            </div>
+    <!-- Liquid Glass SVG filter (refraction via displacement map) -->
+    <svg class="defs" aria-hidden="true" focusable="false">
+        <defs>
+            <filter id="liquid-glass" x="-10%" y="-10%" width="120%" height="120%" color-interpolation-filters="sRGB">
+                <feTurbulence type="fractalNoise" baseFrequency="0.006 0.01" numOctaves="2" seed="11" result="noise" />
+                <feGaussianBlur in="noise" stdDeviation="2.5" result="softNoise" />
+                <feDisplacementMap in="SourceGraphic" in2="softNoise" scale="70" xChannelSelector="R" yChannelSelector="G" />
+            </filter>
+            <filter id="grain">
+                <feTurbulence type="fractalNoise" baseFrequency="0.9" numOctaves="2" stitchTiles="stitch"/>
+                <feColorMatrix values="0 0 0 0 1
+                                       0 0 0 0 1
+                                       0 0 0 0 1
+                                       0 0 0 0.08 0"/>
+            </filter>
+        </defs>
+    </svg>
+
+    <!-- Geometric atmosphere -->
+    <div class="atmosphere" aria-hidden="true">
+        <div class="grid"></div>
+        <div class="shape shape--ring-1"></div>
+        <div class="shape shape--disc-1"></div>
+        <div class="shape shape--ring-2"></div>
+        <div class="shape shape--square-1"></div>
+        <div class="shape shape--disc-2"></div>
+        <div class="shape shape--ring-3"></div>
+        <div class="shape shape--disc-3"></div>
+        <div class="shape shape--line-1"></div>
+        <div class="shape shape--line-2"></div>
+        <div class="shape shape--dots-1"></div>
+        <div class="shape shape--dots-2"></div>
+        <div class="shape shape--ring-4"></div>
+        <div class="shape shape--disc-4"></div>
+    </div>
+
+    <!-- Floating theme picker (desktop only) -->
+    <div class="theme-picker glass" role="group" aria-label="Theme color">
+        <button class="theme-swatch is-active" data-theme="white" style="--c: #fafafa" type="button" aria-label="White"></button>
+        <button class="theme-swatch" data-theme="black"  style="--c: #0a0a0c" type="button" aria-label="Black"></button>
+        <button class="theme-swatch" data-theme="blue"   style="--c: #3b82f6" type="button" aria-label="Blue"></button>
+        <button class="theme-swatch" data-theme="green"  style="--c: #22c55e" type="button" aria-label="Green"></button>
+        <button class="theme-swatch" data-theme="red"    style="--c: #ef4444" type="button" aria-label="Red"></button>
+        <button class="theme-swatch" data-theme="orange" style="--c: #f97316" type="button" aria-label="Orange"></button>
+        <button class="theme-swatch" data-theme="purple" style="--c: #a855f7" type="button" aria-label="Purple"></button>
+    </div>
+
+    <!-- Floating glass nav -->
+    <nav class="nav glass" aria-label="Primary">
+        <a href="#top" class="nav__brand">
+            <span class="nav__name">Tanay&nbsp;Naik</span>
+        </a>
+        <div class="nav__links">
+            <a href="#work">Work</a>
+            <a href="#projects">Projects</a>
+            <a href="#skills">Skills</a>
+            <a href="#contact">Contact</a>
         </div>
-    </section>
+    </nav>
 
-    <!-- About -->
-    <section class="about">
-        <div class="container">
-            <span class="section-label">ABOUT</span>
-            <p class="about-text">
-                I'm a CS student at UMD graduating this spring. I spend most of my time every day building software.
-            </p>
-        </div>
-    </section>
+    <main id="top">
 
-    <!-- Experience -->
-    <section class="experience">
-        <div class="container">
-            <span class="section-label">EXPERIENCE</span>
-            <div class="experience-list">
-                <div class="experience-row">
-                    <div class="experience-info">
-                        <span class="experience-company">Capital One</span>
-                        <span class="experience-role">ML Engineering Intern</span>
-                    </div>
-                    <span class="experience-year">2025</span>
-                </div>
-                <div class="experience-row">
-                    <div class="experience-info">
-                        <span class="experience-company">SociableAI</span>
-                        <span class="experience-role">Full-Stack Developer Intern</span>
-                    </div>
-                    <span class="experience-year">2024–2025</span>
-                </div>
-                <div class="experience-row">
-                    <div class="experience-info">
-                        <span class="experience-company">IBM</span>
-                        <span class="experience-role">Research Intern</span>
-                    </div>
-                    <span class="experience-year">2024</span>
-                </div>
-                <div class="experience-row">
-                    <div class="experience-info">
-                        <span class="experience-company">UMD Computer Science</span>
-                        <span class="experience-role">Teaching Assistant</span>
-                    </div>
-                    <span class="experience-year">2024</span>
-                </div>
-            </div>
-        </div>
-    </section>
+        <!-- Hero -->
+        <section class="hero">
+            <div class="container hero__inner">
+                <h1 class="hero__name">Tanay Naik</h1>
 
-    <!-- Featured Projects -->
-    <section class="featured-projects">
-        <div class="container">
-            <span class="section-label">FEATURED PROJECTS</span>
-            <div class="projects-list">
+                <p class="hero__tagline">
+                    I'm a CS major at UMD. I love building software.
+                </p>
 
-                <div class="project-card">
-                    <div class="project-header">
-                        <h3 class="project-title">CallCode</h3>
-                        <span class="project-badge">1st Place Hackathon Winner</span>
-                    </div>
-                    <p class="project-description">A Discord-style, voice-first interface for interacting with multiple coding agents in parallel. Spawn agents, track status, use push-to-talk, and hear agents speak summaries when they finish. Won 1st place and Founders Prize at the Cursor DC AI Hackathon.</p>
-                    <div class="project-tags">
-                        <span class="tag">React</span>
-                        <span class="tag">Node.js</span>
-                        <span class="tag">ElevenLabs</span>
-                        <span class="tag">Voice AI</span>
-                        <span class="tag">Cursor Extension</span>
-                    </div>
-                    <div class="project-links">
-                        <a href="https://www.callcode.dev/" target="_blank">Live &rarr;</a>
-                        <a href="https://devpost.com/software/code-coder-codes" target="_blank">Devpost &rarr;</a>
-                    </div>
+                <div class="hero__actions">
+                    <a class="btn glass glass--pill" href="mailto:naiktanay05@gmail.com" data-tilt>
+                        <span>Get in touch</span>
+                        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+                    </a>
+                    <a class="btn btn--ghost glass glass--pill" href="https://github.com/TN0123" target="_blank" rel="noopener" data-tilt>
+                        <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.58 2 12.25c0 4.52 2.87 8.35 6.84 9.7.5.1.68-.22.68-.49v-1.72c-2.78.62-3.37-1.36-3.37-1.36-.45-1.18-1.11-1.5-1.11-1.5-.91-.64.07-.62.07-.62 1 .07 1.53 1.06 1.53 1.06.89 1.57 2.34 1.11 2.91.85.09-.66.35-1.11.63-1.37-2.22-.26-4.56-1.14-4.56-5.07 0-1.12.39-2.03 1.03-2.75-.1-.26-.45-1.31.1-2.73 0 0 .84-.28 2.75 1.05a9.3 9.3 0 0 1 5 0c1.91-1.33 2.75-1.05 2.75-1.05.55 1.42.2 2.47.1 2.73.64.72 1.03 1.63 1.03 2.75 0 3.94-2.35 4.8-4.58 5.06.36.32.68.94.68 1.9v2.82c0 .27.18.59.69.49C19.14 20.6 22 16.77 22 12.25 22 6.58 17.52 2 12 2Z"/></svg>
+                        <span>GitHub</span>
+                    </a>
+                    <a class="btn btn--ghost glass glass--pill" href="https://linkedin.com/in/tanaynaik05" target="_blank" rel="noopener" data-tilt>
+                        <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M19 3H5a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V5a2 2 0 0 0-2-2ZM8.34 18.34H5.67V9.67h2.67v8.67ZM7 8.5a1.55 1.55 0 1 1 0-3.1 1.55 1.55 0 0 1 0 3.1Zm11.34 9.84h-2.67v-4.21c0-1 0-2.3-1.4-2.3s-1.62 1.09-1.62 2.22v4.29h-2.67V9.67h2.56v1.18h.04a2.8 2.8 0 0 1 2.52-1.39c2.7 0 3.2 1.78 3.2 4.08v4.8Z"/></svg>
+                        <span>LinkedIn</span>
+                    </a>
                 </div>
 
-                <div class="project-card">
-                    <div class="project-header">
-                        <h3 class="project-title">Schematic</h3>
-                    </div>
-                    <p class="project-description">An open source AI-powered productivity workspace with a writing editor, notes app, and calendar — all with deep AI integrations. 65+ users and counting.</p>
-                    <div class="project-tags">
-                        <span class="tag">Next.js</span>
-                        <span class="tag">PostgreSQL</span>
-                        <span class="tag">Prisma</span>
-                        <span class="tag">NeonDB</span>
-                        <span class="tag">OpenAI</span>
-                        <span class="tag">Gemini</span>
-                    </div>
-                    <div class="project-links">
-                        <a href="https://www.schematic.now/" target="_blank">Live &rarr;</a>
-                        <a href="https://github.com/TN0123/Schematic" target="_blank">GitHub &rarr;</a>
-                    </div>
-                </div>
-
-                <div class="project-card">
-                    <div class="project-header">
-                        <h3 class="project-title">Iterator</h3>
-                    </div>
-                    <p class="project-description">A multi-agent code generation system that handles large-context repository-level coding tasks. Features automated error recovery, iterative task assignment, and fully autonomous code synthesis with intelligent reasoning and unit testing.</p>
-                    <div class="project-tags">
-                        <span class="tag">LangGraph</span>
-                        <span class="tag">LangChain</span>
-                        <span class="tag">Node.js</span>
-                        <span class="tag">Docker</span>
-                        <span class="tag">React</span>
-                        <span class="tag">Gemini</span>
-                    </div>
-                    <div class="project-links">
-                        <a href="https://github.com/TN0123/Iterator" target="_blank">GitHub &rarr;</a>
-                    </div>
-                </div>
-
-                <div class="project-card">
-                    <div class="project-header">
-                        <h3 class="project-title">DataVision</h3>
-                        <span class="project-badge">Hackathon Project</span>
-                    </div>
-                    <p class="project-description">An automated data analyst that uncovers actionable insights from CSV files. Uses AI to clean data, identify relationships, generate visualizations, and provide conversational analysis with dynamic code generation.</p>
-                    <div class="project-tags">
-                        <span class="tag">Next.js</span>
-                        <span class="tag">Flask</span>
-                        <span class="tag">Gemini 2.0</span>
-                        <span class="tag">LangChain</span>
-                        <span class="tag">LangGraph</span>
-                        <span class="tag">Pandas</span>
-                    </div>
-                    <div class="project-links">
-                        <a href="https://devpost.com/software/datavision-hrm5jv" target="_blank">Devpost &rarr;</a>
-                        <a href="https://github.com/aadia1234/DataVision" target="_blank">GitHub &rarr;</a>
-                    </div>
-                </div>
-
-                <div class="project-card">
-                    <div class="project-header">
-                        <h3 class="project-title">Cerebro</h3>
-                        <span class="project-badge">1st Place Hackathon Winner</span>
-                    </div>
-                    <p class="project-description">A Chrome extension for hands-free internet browsing. Uses computer vision to detect facial movements for scrolling and voice commands for navigation and typing. Won Best Razzle Dazzle Hack at Bitcamp 2024.</p>
-                    <div class="project-tags">
-                        <span class="tag">Chrome Extension</span>
-                        <span class="tag">FaceAPI.js</span>
-                        <span class="tag">Web Speech API</span>
-                        <span class="tag">Computer Vision</span>
-                    </div>
-                    <div class="project-links">
-                        <a href="https://devpost.com/software/cerebro-efj0la" target="_blank">Devpost &rarr;</a>
-                        <a href="https://github.com/Datoneguy246/Cerebro" target="_blank">GitHub &rarr;</a>
-                    </div>
-                </div>
-
-                <div class="project-card">
-                    <div class="project-header">
-                        <h3 class="project-title">Google Docs MCP Server</h3>
-                    </div>
-                    <p class="project-description">Google Docs integration through Model Context Protocol. Features document creation, reading, appending, and YouTube transcript extraction with a React frontend and Spring Boot backend.</p>
-                    <div class="project-tags">
-                        <span class="tag">Spring Boot</span>
-                        <span class="tag">Java</span>
-                        <span class="tag">React</span>
-                        <span class="tag">MCP</span>
-                        <span class="tag">Google APIs</span>
-                        <span class="tag">OAuth</span>
-                    </div>
-                    <div class="project-links">
-                        <a href="https://github.com/arnavaggarwal75/google-docs-mcp" target="_blank">GitHub &rarr;</a>
-                    </div>
-                </div>
-
-            </div>
-        </div>
-    </section>
-
-    <!-- Other Projects -->
-    <section class="other-projects">
-        <div class="container">
-            <span class="section-label">OTHER PROJECTS</span>
-            <div class="other-projects-list">
-                <div class="other-project-row">
-                    <div class="other-project-info">
-                        <span class="other-project-name">StockDigestAI</span>
-                        <span class="other-project-desc">RAG-powered real-time stock market insights</span>
-                    </div>
-                    <a href="https://github.com/TN0123/TiDB-Stock-Analyst" target="_blank" class="other-project-link">GitHub &rarr;</a>
-                </div>
-                <div class="other-project-row">
-                    <div class="other-project-info">
-                        <span class="other-project-name">FaceLogger</span>
-                        <span class="other-project-desc">ML facial recognition security logging system</span>
-                    </div>
-                    <a href="https://github.com/TN0123/FaceLogger" target="_blank" class="other-project-link">GitHub &rarr;</a>
-                </div>
-                <div class="other-project-row">
-                    <div class="other-project-info">
-                        <span class="other-project-name">LLTrainer</span>
-                        <span class="other-project-desc">Speedcubing last layer algorithm trainer</span>
-                    </div>
-                    <a href="https://github.com/TN0123/LLTrainer" target="_blank" class="other-project-link">GitHub &rarr;</a>
-                </div>
-                <div class="other-project-row">
-                    <div class="other-project-info">
-                        <span class="other-project-name">Carbon Emissions Visualizer</span>
-                        <span class="other-project-desc">Real-time point source emissions by country and sector</span>
-                    </div>
-                    <a href="https://tn0123.github.io/ANTH481-Final-Project/" target="_blank" class="other-project-link">Live &rarr;</a>
+                <div class="hero__meta">
+                    <span class="meta-chip"><span class="meta-chip__label">Based in</span> College Park, MD</span>
+                    <span class="meta-chip"><span class="meta-chip__label">Focus</span> Agents · ML · Web</span>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- Skills -->
-    <section class="skills">
-        <div class="container">
-            <span class="section-label">SKILLS</span>
-            <div class="skills-list">
-                <div class="skill-group">
-                    <span class="skill-category">Languages</span>
-                    <span class="skill-items">Python, TypeScript, Java, C, Rust, OCaml, SQL</span>
-                </div>
-                <div class="skill-group">
-                    <span class="skill-category">ML / AI</span>
-                    <span class="skill-items">PyTorch, Hugging Face, LangChain, RAG, fine-tuning (LoRA, RLHF, GRPO)</span>
-                </div>
-                <div class="skill-group">
-                    <span class="skill-category">Web</span>
-                    <span class="skill-items">Next.js, React, Node.js, Tailwind, Prisma, PostgreSQL, Vercel</span>
-                </div>
-                <div class="skill-group">
-                    <span class="skill-category">Tools</span>
-                    <span class="skill-items">Docker, Git, AWS, CUDA, MCP</span>
+        <!-- Experience -->
+        <section class="section section--work" id="work">
+            <div class="container">
+                <span class="eyebrow"><span class="eyebrow__num">01</span> Where I've worked</span>
+                <div class="glass glass--card experience">
+
+                    <div class="exp-row" data-reveal>
+                        <div class="exp-row__left">
+                            <span class="exp-logo-wrap">
+                                <img class="exp-logo" src="https://upload.wikimedia.org/wikipedia/commons/9/98/Capital_One_logo.svg" alt="" aria-hidden="true">
+                            </span>
+                            <span class="exp-row__company">Capital One</span>
+                            <span class="exp-row__role">ML Engineering Intern</span>
+                        </div>
+                        <span class="exp-row__year">2025</span>
+                    </div>
+
+                    <div class="exp-row" data-reveal>
+                        <div class="exp-row__left">
+                            <span class="exp-logo-wrap">
+                                <svg class="exp-logo exp-logo--inline" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                                    <!-- Left curly brace -->
+                                    <path d="M11 6H8C6.5 6 5.5 7 5.5 8.5V13C5.5 14.4 4 15 3 16C4 17 5.5 17.6 5.5 19V23.5C5.5 25 6.5 26 8 26H11"/>
+                                    <!-- Right curly brace -->
+                                    <path d="M21 6H24C25.5 6 26.5 7 26.5 8.5V13C26.5 14.4 28 15 29 16C28 17 26.5 17.6 26.5 19V23.5C26.5 25 25.5 26 24 26H21"/>
+                                    <!-- Three chat dots -->
+                                    <circle cx="12" cy="16" r="1.5" fill="currentColor" stroke="none"/>
+                                    <circle cx="16" cy="16" r="1.5" fill="currentColor" stroke="none"/>
+                                    <circle cx="20" cy="16" r="1.5" fill="currentColor" stroke="none"/>
+                                </svg>
+                            </span>
+                            <span class="exp-row__company">SociableAI</span>
+                            <span class="exp-row__role">Full-Stack Developer Intern</span>
+                        </div>
+                        <span class="exp-row__year">2024 – 2025</span>
+                    </div>
+
+                    <div class="exp-row" data-reveal>
+                        <div class="exp-row__left">
+                            <span class="exp-logo-wrap">
+                                <img class="exp-logo" src="https://upload.wikimedia.org/wikipedia/commons/5/51/IBM_logo.svg" alt="" aria-hidden="true">
+                            </span>
+                            <span class="exp-row__company">IBM</span>
+                            <span class="exp-row__role">Research Intern</span>
+                        </div>
+                        <span class="exp-row__year">2024</span>
+                    </div>
+
+                    <div class="exp-row" data-reveal>
+                        <div class="exp-row__left">
+                            <span class="exp-logo-wrap">
+                                <img class="exp-logo" src="https://upload.wikimedia.org/wikipedia/commons/a/a6/Maryland_Terrapins_logo.svg" alt="" aria-hidden="true">
+                            </span>
+                            <span class="exp-row__company">UMD Computer Science</span>
+                            <span class="exp-row__role">Teaching Assistant</span>
+                        </div>
+                        <span class="exp-row__year">2024</span>
+                    </div>
+
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- Contact -->
-    <section class="contact">
-        <div class="container">
-            <span class="section-label">CONTACT</span>
-            <div class="contact-links">
-                <a href="mailto:naiktanay05@gmail.com">naiktanay05@gmail.com</a>
-                <a href="https://github.com/TN0123" target="_blank">GitHub</a>
-                <a href="https://linkedin.com/in/tanaynaik05" target="_blank">LinkedIn</a>
+        <!-- Featured Projects -->
+        <section class="section section--projects" id="projects">
+            <div class="container">
+                <span class="eyebrow"><span class="eyebrow__num">02</span> Featured projects</span>
+
+                <div class="projects-grid">
+
+                    <article class="project glass glass--card" data-tilt>
+                        <header class="project__head">
+                            <h3 class="project__title">AgentVibe</h3>
+                            <span class="project__badge project__badge--live"><span class="live-dot"></span>Shipping</span>
+                        </header>
+                        <p class="project__desc">An identity-based chat API for agents and humans. One account, one handle. Agents speak through a REST API, humans through the web UI. Ships with an open-source CLI for agent runtime context, target resolution, and typed messaging.</p>
+                        <ul class="project__tags">
+                            <li>Convex</li><li>Astro</li><li>React</li><li>Turborepo</li><li>Bun</li><li>OpenAPI</li>
+                        </ul>
+                        <div class="project__links">
+                            <a href="https://agentvibe.chat" target="_blank" rel="noopener">Live<span class="arrow">→</span></a>
+                        </div>
+                    </article>
+
+                    <article class="project glass glass--card" data-tilt>
+                        <header class="project__head">
+                            <h3 class="project__title">Digital Clone Maker</h3>
+                        </header>
+                        <p class="project__desc">Build an AI clone of yourself that thinks, speaks, and builds like you do, powered by Claude Code. Ships as a one-line install with cross-platform tarballs and an end-to-end clone-engine runtime.</p>
+                        <ul class="project__tags">
+                            <li>Claude Code</li><li>Bash</li><li>Shell</li><li>Cross-platform</li><li>Distribution</li>
+                        </ul>
+                        <div class="project__links">
+                            <a href="https://tn0123.github.io/clone-engine/" target="_blank" rel="noopener">Live<span class="arrow">→</span></a>
+                            <a href="https://github.com/TN0123/clone-engine" target="_blank" rel="noopener">GitHub<span class="arrow">→</span></a>
+                        </div>
+                    </article>
+
+                    <article class="project glass glass--card" data-tilt>
+                        <header class="project__head">
+                            <h3 class="project__title">AI Internet Simulator</h3>
+                        </header>
+                        <p class="project__desc">An AI-generated internet. Every query, link click, and form submit calls Gemini 3.1 and renders a full HTML page into a sandboxed iframe. No back button, just forward into whatever the model imagines.</p>
+                        <ul class="project__tags">
+                            <li>Next.js</li><li>React 19</li><li>Gemini 3.1</li><li>OpenAI</li><li>Sandboxed iframe</li>
+                        </ul>
+                        <div class="project__links">
+                            <a href="https://github.com/TN0123/internet-simulator" target="_blank" rel="noopener">GitHub<span class="arrow">→</span></a>
+                        </div>
+                    </article>
+
+                    <article class="project glass glass--card" data-tilt>
+                        <header class="project__head">
+                            <h3 class="project__title">one-shot-ui</h3>
+                            <span class="project__badge">npm</span>
+                        </header>
+                        <p class="project__desc">Deterministic UI extraction and diffing from screenshots. Turn a reference into structured JSON (layout, colors, typography, components, design tokens), then compare implementations and get actionable CSS fix suggestions.</p>
+                        <ul class="project__tags">
+                            <li>TypeScript</li><li>CLI</li><li>Playwright</li><li>OCR</li><li>Computer Vision</li>
+                        </ul>
+                        <div class="project__links">
+                            <a href="https://www.npmjs.com/package/one-shot-ui" target="_blank" rel="noopener">npm<span class="arrow">→</span></a>
+                            <a href="https://github.com/TN0123/one-shot-ui" target="_blank" rel="noopener">GitHub<span class="arrow">→</span></a>
+                        </div>
+                    </article>
+
+                    <article class="project glass glass--card" data-tilt>
+                        <header class="project__head">
+                            <h3 class="project__title">CityDiff</h3>
+                        </header>
+                        <p class="project__desc">A static site that compares any two cities from a pre-scraped corpus across climate, cost of living, and demographics, answering what it would actually be like to live there. A monthly GitHub Actions pipeline refreshes the data via PRs.</p>
+                        <ul class="project__tags">
+                            <li>Vite</li><li>Preact</li><li>Cloudflare Pages</li><li>Python</li><li>GitHub Actions</li>
+                        </ul>
+                        <div class="project__links">
+                            <a href="https://citydiff.pages.dev" target="_blank" rel="noopener">Live<span class="arrow">→</span></a>
+                        </div>
+                    </article>
+
+                    <article class="project glass glass--card" data-tilt>
+                        <header class="project__head">
+                            <h3 class="project__title">Wikipedia Doomscroller</h3>
+                        </header>
+                        <p class="project__desc">TikTok for Wikipedia. Swipe through endless articles in a vertical feed where each page is lightly summarized, fully sanitized, and served from Wikipedia's public API. A weirdly delightful way to fall into a rabbit hole.</p>
+                        <ul class="project__tags">
+                            <li>Next.js 16</li><li>React 19</li><li>Tailwind 4</li><li>DOMPurify</li><li>PostHog</li>
+                        </ul>
+                        <div class="project__links">
+                            <a href="https://wikipedia-doomscroller.vercel.app/" target="_blank" rel="noopener">Live<span class="arrow">→</span></a>
+                            <a href="https://github.com/TN0123/wiktok" target="_blank" rel="noopener">GitHub<span class="arrow">→</span></a>
+                        </div>
+                    </article>
+
+                    <article class="project glass glass--card" data-tilt>
+                        <header class="project__head">
+                            <h3 class="project__title">CallCode</h3>
+                            <span class="project__badge"><span class="trophy">★</span> 1st Place</span>
+                        </header>
+                        <p class="project__desc">A Discord-style, voice-first interface for orchestrating multiple coding agents in parallel. Spawn agents, track status, push-to-talk, and hear agents speak summaries on completion. Won 1st Place and the Founders Prize at the Cursor DC AI Hackathon.</p>
+                        <ul class="project__tags">
+                            <li>React</li><li>Node.js</li><li>ElevenLabs</li><li>Voice AI</li><li>Cursor Ext.</li>
+                        </ul>
+                        <div class="project__links">
+                            <a href="https://www.callcode.dev/" target="_blank" rel="noopener">Live<span class="arrow">→</span></a>
+                            <a href="https://devpost.com/software/code-coder-codes" target="_blank" rel="noopener">Devpost<span class="arrow">→</span></a>
+                        </div>
+                    </article>
+
+                    <article class="project glass glass--card" data-tilt>
+                        <header class="project__head">
+                            <h3 class="project__title">Schematic</h3>
+                            <span class="project__badge project__badge--live"><span class="live-dot"></span>70+ users</span>
+                        </header>
+                        <p class="project__desc">An open-source AI-powered productivity workspace with a writing editor, notes app, and calendar, plus deep AI integrations across every surface.</p>
+                        <ul class="project__tags">
+                            <li>Next.js</li><li>PostgreSQL</li><li>Prisma</li><li>NeonDB</li><li>OpenAI</li><li>Gemini</li>
+                        </ul>
+                        <div class="project__links">
+                            <a href="https://schematicnow.vercel.app" target="_blank" rel="noopener">Live<span class="arrow">→</span></a>
+                            <a href="https://github.com/TN0123/Schematic" target="_blank" rel="noopener">GitHub<span class="arrow">→</span></a>
+                        </div>
+                    </article>
+
+                    <article class="project glass glass--card" data-tilt>
+                        <header class="project__head">
+                            <h3 class="project__title">Claude Code Usage Widget</h3>
+                        </header>
+                        <p class="project__desc">A native macOS menu bar widget that tracks Claude Code rate-limit usage in real time. Zero-config, private (no API keys, nothing stored), and tiny (~10 MB). Built with Tauri and Rust.</p>
+                        <ul class="project__tags">
+                            <li>Tauri</li><li>Rust</li><li>macOS</li><li>Vite</li><li>TypeScript</li>
+                        </ul>
+                        <div class="project__links">
+                            <a href="https://github.com/TN0123/claude-code-usage-widget" target="_blank" rel="noopener">GitHub<span class="arrow">→</span></a>
+                            <a href="https://github.com/TN0123/claude-code-usage-widget/releases/latest" target="_blank" rel="noopener">Download<span class="arrow">→</span></a>
+                        </div>
+                    </article>
+
+                    <article class="project glass glass--card" data-tilt>
+                        <header class="project__head">
+                            <h3 class="project__title">agentlights</h3>
+                            <span class="project__badge">npm</span>
+                        </header>
+                        <p class="project__desc">Color your Claude Code terminal pane when Claude is waiting on you. A tiny shell hook (no daemon, no plugin) that tints the background of idle panes so you can tell at a glance which Claude needs you.</p>
+                        <ul class="project__tags">
+                            <li>npm</li><li>Claude Code</li><li>Shell</li><li>Hooks</li><li>OSC 11</li>
+                        </ul>
+                        <div class="project__links">
+                            <a href="https://www.npmjs.com/package/agentlights" target="_blank" rel="noopener">npm<span class="arrow">→</span></a>
+                            <a href="https://github.com/TN0123/agentlights" target="_blank" rel="noopener">GitHub<span class="arrow">→</span></a>
+                        </div>
+                    </article>
+
+                    <article class="project glass glass--card" data-tint="violet" data-tilt>
+                        <header class="project__head">
+                            <h3 class="project__title">Iterator</h3>
+                        </header>
+                        <p class="project__desc">A multi-agent code generation system for large-context, repository-level coding. Automated error recovery, iterative task assignment, and fully autonomous synthesis with reasoning and unit tests.</p>
+                        <ul class="project__tags">
+                            <li>LangGraph</li><li>LangChain</li><li>Node.js</li><li>Docker</li><li>React</li><li>Gemini</li>
+                        </ul>
+                        <div class="project__links">
+                            <a href="https://github.com/TN0123/Iterator" target="_blank" rel="noopener">GitHub<span class="arrow">→</span></a>
+                        </div>
+                    </article>
+
+                    <article class="project glass glass--card" data-tint="teal" data-tilt>
+                        <header class="project__head">
+                            <h3 class="project__title">DataVision</h3>
+                            <span class="project__badge">Hackathon</span>
+                        </header>
+                        <p class="project__desc">An automated data analyst that uncovers actionable insights from CSV files. Cleans data, surfaces relationships, generates visualizations, and reasons conversationally via dynamic code generation.</p>
+                        <ul class="project__tags">
+                            <li>Next.js</li><li>Flask</li><li>Gemini 2.0</li><li>LangChain</li><li>LangGraph</li><li>Pandas</li>
+                        </ul>
+                        <div class="project__links">
+                            <a href="https://devpost.com/software/datavision-hrm5jv" target="_blank" rel="noopener">Devpost<span class="arrow">→</span></a>
+                            <a href="https://github.com/aadia1234/DataVision" target="_blank" rel="noopener">GitHub<span class="arrow">→</span></a>
+                        </div>
+                    </article>
+
+                    <article class="project glass glass--card" data-tint="amber" data-tilt>
+                        <header class="project__head">
+                            <h3 class="project__title">Cerebro</h3>
+                            <span class="project__badge"><span class="trophy">★</span> 1st Place</span>
+                        </header>
+                        <p class="project__desc">A Chrome extension for hands-free browsing. Detects facial movement for scrolling and uses voice for navigation and typing. Won Best Razzle Dazzle Hack at Bitcamp 2024.</p>
+                        <ul class="project__tags">
+                            <li>Chrome Ext.</li><li>FaceAPI.js</li><li>Web Speech</li><li>Computer Vision</li>
+                        </ul>
+                        <div class="project__links">
+                            <a href="https://devpost.com/software/cerebro-efj0la" target="_blank" rel="noopener">Devpost<span class="arrow">→</span></a>
+                            <a href="https://github.com/Datoneguy246/Cerebro" target="_blank" rel="noopener">GitHub<span class="arrow">→</span></a>
+                        </div>
+                    </article>
+
+                    <article class="project glass glass--card" data-tint="green" data-tilt>
+                        <header class="project__head">
+                            <h3 class="project__title">Google Docs MCP Server</h3>
+                        </header>
+                        <p class="project__desc">Google Docs integration over the Model Context Protocol. Document creation, reading, appending, plus YouTube transcript extraction. React frontend, Spring Boot backend.</p>
+                        <ul class="project__tags">
+                            <li>Spring Boot</li><li>Java</li><li>React</li><li>MCP</li><li>Google APIs</li><li>OAuth</li>
+                        </ul>
+                        <div class="project__links">
+                            <a href="https://github.com/arnavaggarwal75/google-docs-mcp" target="_blank" rel="noopener">GitHub<span class="arrow">→</span></a>
+                        </div>
+                    </article>
+
+                </div>
             </div>
-        </div>
-    </section>
+        </section>
+
+        <!-- Other Projects -->
+        <section class="section section--other">
+            <div class="container">
+                <span class="eyebrow"><span class="eyebrow__num">03</span> Other projects</span>
+                <div class="glass glass--card other-list">
+                    <a class="other-row" href="https://github.com/TN0123/open-guitar-tuner" target="_blank" rel="noopener">
+                        <div class="other-row__main">
+                            <span class="other-row__name">Open Guitar Tuner</span>
+                            <span class="other-row__desc">Browser-based chromatic pitch detection via Web Audio (PWA)</span>
+                        </div>
+                        <span class="other-row__cta">GitHub <span class="arrow">→</span></span>
+                    </a>
+                    <a class="other-row" href="https://github.com/TN0123/TiDB-Stock-Analyst" target="_blank" rel="noopener">
+                        <div class="other-row__main">
+                            <span class="other-row__name">StockDigestAI</span>
+                            <span class="other-row__desc">RAG-powered real-time stock market insights</span>
+                        </div>
+                        <span class="other-row__cta">GitHub <span class="arrow">→</span></span>
+                    </a>
+                    <a class="other-row" href="https://github.com/TN0123/FaceLogger" target="_blank" rel="noopener">
+                        <div class="other-row__main">
+                            <span class="other-row__name">FaceLogger</span>
+                            <span class="other-row__desc">ML facial-recognition security logging system</span>
+                        </div>
+                        <span class="other-row__cta">GitHub <span class="arrow">→</span></span>
+                    </a>
+                    <a class="other-row" href="https://github.com/TN0123/LLTrainer" target="_blank" rel="noopener">
+                        <div class="other-row__main">
+                            <span class="other-row__name">LLTrainer</span>
+                            <span class="other-row__desc">Speedcubing last-layer algorithm trainer</span>
+                        </div>
+                        <span class="other-row__cta">GitHub <span class="arrow">→</span></span>
+                    </a>
+                    <a class="other-row" href="https://tn0123.github.io/ANTH481-Final-Project/" target="_blank" rel="noopener">
+                        <div class="other-row__main">
+                            <span class="other-row__name">Carbon Emissions Visualizer</span>
+                            <span class="other-row__desc">Real-time point-source emissions by country and sector</span>
+                        </div>
+                        <span class="other-row__cta">Live <span class="arrow">→</span></span>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Skills -->
+        <section class="section section--skills" id="skills">
+            <div class="container">
+                <span class="eyebrow"><span class="eyebrow__num">04</span> Skills</span>
+                <div class="skills-grid">
+                    <div class="glass glass--card skill" data-tilt>
+                        <span class="skill__cat">Languages</span>
+                        <div class="skill__items">
+                            <span>Python</span><span>TypeScript</span><span>Java</span><span>C</span><span>Rust</span><span>OCaml</span><span>SQL</span>
+                        </div>
+                    </div>
+                    <div class="glass glass--card skill" data-tilt>
+                        <span class="skill__cat">ML / AI</span>
+                        <div class="skill__items">
+                            <span>PyTorch</span><span>Hugging Face</span><span>LangChain</span><span>RAG</span><span>LoRA</span><span>RLHF</span><span>GRPO</span>
+                        </div>
+                    </div>
+                    <div class="glass glass--card skill" data-tilt>
+                        <span class="skill__cat">Web</span>
+                        <div class="skill__items">
+                            <span>Next.js</span><span>React</span><span>Node.js</span><span>Tailwind</span><span>Prisma</span><span>PostgreSQL</span><span>Vercel</span>
+                        </div>
+                    </div>
+                    <div class="glass glass--card skill" data-tilt>
+                        <span class="skill__cat">Tools</span>
+                        <div class="skill__items">
+                            <span>Docker</span><span>Git</span><span>AWS</span><span>CUDA</span><span>MCP</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact -->
+        <section class="section section--contact" id="contact">
+            <div class="container">
+                <span class="eyebrow"><span class="eyebrow__num">05</span> Get in touch</span>
+                <div class="glass glass--card contact">
+                    <h2 class="contact__head">Let's build something.</h2>
+                    <p class="contact__sub">I'm always interested in great teams, ambitious problems, and well-designed tools. Say hello.</p>
+                    <div class="contact__links">
+                        <a class="btn glass glass--pill" href="mailto:naiktanay05@gmail.com" data-tilt>
+                            <span>naiktanay05@gmail.com</span>
+                            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+                        </a>
+                        <a class="btn btn--ghost glass glass--pill" href="https://github.com/TN0123" target="_blank" rel="noopener" data-tilt>GitHub</a>
+                        <a class="btn btn--ghost glass glass--pill" href="https://linkedin.com/in/tanaynaik05" target="_blank" rel="noopener" data-tilt>LinkedIn</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
 
     <script src="script.js"></script>
 </body>
